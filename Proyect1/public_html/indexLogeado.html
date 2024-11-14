@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this template
+-->
+<html>
+    <head>
+        <title>IndexLogeado</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="indexcss.css">
+    </head>
+    <body>
+         <header>
+        <h1>Bienvenido a Nuestro Sitio de Citas</h1>
+        <p>Encuentra a tu persona especial hoy</p>
+    </header>
+        
+         <nav class="header-nav">
+        <!-- Enlaces a la izquierda -->
+        <div class="nav-left">
+            <a href="modificar_usuario.html" class="nav-link">Modificar Usuario</a>
+            
+
+            <!-- Menú desplegable -->
+            <div class="dropdown">
+                <button class="dropdown-btn">Aficiones</button>
+                <div class="dropdown-content">
+                    <a href="geolocalizacion.html">Baja Aficiones</a>
+                    <a href="aficiones.html">Alta Aficiones</a>
+                </div>
+            </div>
+            
+            <div class="dropdown">
+                <button class="dropdown-btn">Búsqueda</button>
+                <div class="dropdown-content">
+                    <a href="geolocalizacion.html">Geolocalización</a>
+                    <a href="aficiones.html">Aficiones</a>
+                </div>
+            </div>
+            
+            <a href="ver-likes.html" class="nav-link">Ver likes</a>
+            
+        </div>
+
+        <!-- Enlace a la derecha -->
+        <div class="nav-right">
+            <a href="index.html" class="nav-link">Log out</a>
+        </div>
+    </nav>
+
+    <!-- Contenido Principal -->
+    <main>
+        <h2>Formulario de Búsqueda</h2>
+        <form id="datingForm">
+            <!-- Qué buscas -->
+            <label for="queBuscas">¿Qué buscas?</label>
+            <select id="queBuscas" name="queBuscas" required>
+                <option value="">Seleccione...</option>
+                <option value="hombre">Hombre</option>
+                <option value="mujer">Mujer</option>
+                <option value="ambos">Ambos</option>
+            </select>
+
+            <!-- Edad -->
+            <label for="edad">Rango de Edad</label>
+            <select id="edad" name="edad" required>
+                <option value="">Seleccione...</option>
+                <option value="18-25">18-25 años</option>
+                <option value="26-35">26-35 años</option>
+                <option value="36-45">36-45 años</option>
+                <option value="46+">46 años o más</option>
+            </select>
+
+            <!-- Ciudad -->
+            <label for="ciudad">Ciudad</label>
+            <select id="ciudad" name="ciudad" required>
+                <option value="">Seleccione...</option>
+                <option value="vitoria">Vitoria</option>
+                <option value="donosti">Donosti</option>
+                <option value="bilbao">Bilbao</option>
+            </select>
+
+            <button type="submit" onclick="handleSearchClick()">Buscar</button>
+        </form>
+    </main>
+
+    <!-- Pie de Página -->
+    <footer>
+        <p>&copy; VitoMaite04. Todos los derechos reservados.</p>
+    </footer>
+    
+    <script src="indexjs.js"></script>
+    </body>
+</html>
