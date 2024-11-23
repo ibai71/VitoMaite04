@@ -6,6 +6,7 @@
 function iniciarBD() {
     const solicitud = indexedDB.open("vitomaite04", 1);
     console.log("Intentando abrir la base de datos...");
+    
 
     solicitud.onsuccess = function(evento) {
         bd = evento.target.result;
@@ -31,6 +32,7 @@ window.addEventListener("load", iniciarBD);
 
 function cargarResultadosBusqueda() {
     console.log("Intentando cargar resultados de búsqueda...");
+    const emailUsuarioLogueado = sessionStorage.getItem("emailUsuario");
 
     if (!bd) {
         console.error("La base de datos no está disponible.");
@@ -65,6 +67,7 @@ function cargarResultadosBusqueda() {
         const resultadosFiltrados = usuarios.filter(usuario => {
             const edadUsuario = parseInt(usuario.edad, 10);
             return (
+                usuario.email !== emailUsuarioLogueado &&
                 (ciudad === "" || usuario.ciudad.toLowerCase() === ciudad.toLowerCase()) &&
                 (genero === "ambos" || usuario.genero.toLowerCase() === genero.toLowerCase()) &&
                 filtrarPorRangoEdad(edadUsuario, rangoEdad)
