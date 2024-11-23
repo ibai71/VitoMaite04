@@ -8,7 +8,7 @@ const params = new URLSearchParams(window.location.search);
 const emailUsuario = params.get("email");
 
 if (emailUsuario) {
-    const solicitud = indexedDB.open("vitomaitexx", 1);
+    const solicitud = indexedDB.open("vitomaite04", 1);
 
     solicitud.onsuccess = function(evento) {
         const bd = evento.target.result;
@@ -21,6 +21,7 @@ if (emailUsuario) {
             const usuario = evento.target.result;
             if (usuario) {
                 mostrarDetalles(usuario, bd);
+                mostrarMapa(usuario); // Llamada para mostrar el mapa con la ubicación del usuario
             } else {
                 document.getElementById("detallesUsuario").innerText = "Usuario no encontrado.";
             }
@@ -118,5 +119,37 @@ function mostrarAficiones(aficionesUsuario, bd) {
         };
     });
 }
+
+function esperarGoogleMaps(callback) {
+    if (typeof google !== "undefined" && google.maps) {
+        callback(); // Ejecutar la función pasada cuando Google Maps esté listo
+    } else {
+        setTimeout(() => esperarGoogleMaps(callback), 100); // Reintentar en 100ms
+    }
+}
+
+function mostrarMapa(usuario) {
+    const mapaContainer = document.getElementById("map");
+    if (!usuario.latitud || !usuario.longitud) {
+        mapaContainer.innerHTML = "<p>Ubicación no disponible para este usuario.</p>";
+        return;
+    }
+
+    // Configurar el mapa después de confirmar que Google Maps está disponible
+    esperarGoogleMaps(() => {
+        const mapa = new google.maps.Map(mapaContainer, {
+            center: { lat: usuario.latitud, lng: usuario.longitud },
+            zoom: 14
+        });
+
+        new google.maps.Marker({
+            position: { lat: usuario.latitud, lng: usuario.longitud },
+            map: mapa,
+            title: `Ubicación de ${usuario.nombre}`
+        });
+    });
+}
+
+
 
 

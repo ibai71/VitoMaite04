@@ -6,7 +6,7 @@
 
 
 function iniciarBD() {
-    const solicitud = indexedDB.open("vitomaitexx", 1);
+    const solicitud = indexedDB.open("vitomaite04", 1);
     console.log("Intentando abrir la base de datos...");
 
     solicitud.onsuccess = function(evento) {

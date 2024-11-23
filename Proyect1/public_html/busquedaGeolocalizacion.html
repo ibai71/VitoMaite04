@@ -10,22 +10,18 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Búsqueda por Geolocalización</title>
     <link rel="stylesheet" href="indexcss.css">
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAg1Ef_2UJmZgyZk4WSKssPVlE4IZOFCtY&callback=iniciarMap" async defer></script>
-    <script src="indexedPrueva.js"></script>
-    <script src="geolocalizacion.js"></script>
-    <style>
-        #map {
-            height: 500px;
-            width: 100%;
-        }
-        .controls {
-            margin: 20px 0;
-        }
-    </style>
+     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAg1Ef_2UJmZgyZk4WSKssPVlE4IZOFCtY&amp;callback=iniciarMap" async defer></script>
+    <script src="geolocalizacion1.js"></script>
+    
+    
+    
+    
 </head>
-<body>
+<body >
     <header>
-        <h1>Búsqueda por Geolocalización</h1>
+        <h1>Bienvenido a Vitomaite</h1>
+        <p>Encuentra a tu persona especial hoy</p>
+        <div class="logo"></div>
     </header>
     <nav class="header-nav">
         <a href="indexLogeado.html" class="link">Volver</a>
@@ -43,7 +39,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
             </select>
             <button onclick="buscarPorGeolocalizacion()">Buscar</button>
         </div>
-        <div id="map"></div>
+        <div id="map" ></div>
     </main>
     
     <footer>

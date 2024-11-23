@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function() {
         document.getElementById("user-name").textContent = "Hola " + nombreUsuario + "!";
 
         // Abre la base de datos y busca la foto del usuario
-        var solicitud = indexedDB.open("vitomaitexx", 1);
+        var solicitud = indexedDB.open("vitomaite04", 1);
 
         solicitud.onsuccess = function(evento) {
             var bd = evento.target.result;

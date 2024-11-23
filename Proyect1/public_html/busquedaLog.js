@@ -4,7 +4,7 @@
  */
 
 function iniciarBD() {
-    const solicitud = indexedDB.open("vitomaitexx", 1);
+    const solicitud = indexedDB.open("vitomaite04", 1);
     console.log("Intentando abrir la base de datos...");
 
     solicitud.onsuccess = function(evento) {
@@ -88,7 +88,8 @@ function cargarResultadosBusqueda() {
             item.classList.add("resultado-item");
 
             const foto = document.createElement("img");
-            foto.classList.add("resultado-foto");
+            
+            foto.classList.add("resultado-foto2");
             if (usuario.foto) {
                 foto.src = usuario.foto;
                 

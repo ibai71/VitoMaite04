@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     // Iniciar la base de datos
-    const solicitud = indexedDB.open("vitomaitexx", 1);
+    const solicitud = indexedDB.open("vitomaite04", 1);
     let bd;
 
     solicitud.onsuccess = function(evento) {

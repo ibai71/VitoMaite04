@@ -15,7 +15,7 @@ function mostrarResultados(aficionesSeleccionadas) {
         return;
     }
 
-    const solicitud = indexedDB.open("vitomaitexx", 1);
+    const solicitud = indexedDB.open("vitomaite04", 1);
 
     solicitud.onsuccess = function (evento) {
         const bd = evento.target.result;
@@ -66,17 +66,25 @@ function cargarUsuarios(usuariosIds, almacenUsuarios) {
                 usuarioDiv.className = "usuario";
 
                 // Crear imagen o fondo gris
-                const img = document.createElement("img");
-                img.src = usuario.foto ? usuario.foto : "placeholder-gris.png";
-                img.alt = `Foto de ${usuario.nombre}`;
-                img.className = "foto-usuario";
+                const foto = document.createElement("img");
+                foto.classList.add("resultado-foto2");
+                if (usuario.foto) {
+                    foto.src = usuario.foto;
+                
+                } else {
+                    foto.src = ""; 
+                    foto.style.backgroundColor = "#ccc";
+                }
+                foto.addEventListener("click", function() {
+                window.location.href = `detallesUsuario.html?email=${encodeURIComponent(usuario.email)}`;
+            });
 
                 // Nombre y edad
                 const nombreEdad = document.createElement("p");
                 nombreEdad.textContent = `${usuario.nombre}, ${usuario.edad} años`;
 
                 // Agregar elementos al contenedor del usuario
-                usuarioDiv.appendChild(img);
+                usuarioDiv.appendChild(foto);
                 usuarioDiv.appendChild(nombreEdad);
                 resultadosContainer.appendChild(usuarioDiv);
             }

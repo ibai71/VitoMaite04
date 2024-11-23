@@ -5,17 +5,18 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
 -->
 <html>
     <head>
-        <title>TODO supply a title</title>
+        <title>Modificar usuario</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="indexcss.css">
         <script src="indexedprueba.js"></script>
-        <script src="modificarUsuario.js"></script>
+        
     </head>
     <body>
          <header>
-        <h1>Bienvenido a Nuestro Sitio de Citas</h1>
-        <p>Encuentra a tu persona especial hoy</p>
+        <h1>Bienvenido a Vitomaite</h1>
+        <p>Modifica tu usuario</p>
+        <div class="logo"></div>
     </header>
         <nav class="header-nav">
      
@@ -38,9 +39,14 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
             </div>
 
             <div class="input-group">
-                <label for="foto">Foto (en formato base64):</label>
-                <input type="file" id="foto" accept="image/*">
-            </div>
+    <label for="foto">Foto (en formato base64):</label>
+    <input type="file" id="foto" accept="image/*">
+    <div id="previewContainer">
+        <img id="preview" src="" alt="Previsualización de la foto" style="display: none; max-width: 100%; height: auto;">
+    </div>
+</div>
+            
+            
 
             <button type="button" onclick="modificarUsuario()">Guardar Cambios</button>
         </form>
@@ -53,5 +59,6 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
     <footer>
         <p>&copy; VitoMaite04. Todos los derechos reservados.</p>
     </footer>
+        <script src="modificarUsuario.js"></script>
     </body>
 </html>

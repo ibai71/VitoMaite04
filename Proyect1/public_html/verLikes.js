@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     // Abre la base de datos
-    var solicitud = indexedDB.open("vitomaitexx", 1);
+    var solicitud = indexedDB.open("vitomaite04", 1);
 
     solicitud.onsuccess = function(event) {
         bd = event.target.result;
